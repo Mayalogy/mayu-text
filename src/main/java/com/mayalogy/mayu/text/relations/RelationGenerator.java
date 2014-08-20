@@ -54,6 +54,7 @@ public class RelationGenerator {
 		applyGrammaticalRule(SyntacticRule.fromString("nsubj_dep>prep_gov>prep_dep", TDRole.GOVERNOR), dependencies, rels);
 		applyGrammaticalRule(SyntacticRule.fromString("nsubj_dep>nsubj_gov>punct_dep", TDRole.GOVERNOR), dependencies, rels);
 		applyGrammaticalRule(SyntacticRule.fromString("nsubj_dep>aux_dep>aux_gov", TDRole.GOVERNOR), dependencies, rels);
+		applyGrammaticalRule(SyntacticRule.fromString("nsubj_dep>nsubj_gov>acomp_dep", TDRole.GOVERNOR), dependencies, rels);
 	}
 
 	/**

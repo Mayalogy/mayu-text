@@ -10,10 +10,9 @@ import org.slf4j.LoggerFactory;
 import com.mayalogy.mayu.text.dtrees.DependencyParser;
 
 import edu.stanford.nlp.ling.Word;
-import edu.stanford.nlp.objectbank.TokenizerFactory;
 import edu.stanford.nlp.parser.lexparser.LexicalizedParser;
 import edu.stanford.nlp.process.PTBTokenizer;
-import edu.stanford.nlp.process.WordTokenFactory;
+import edu.stanford.nlp.process.TokenizerFactory;
 import edu.stanford.nlp.trees.GrammaticalStructure;
 import edu.stanford.nlp.trees.GrammaticalStructureFactory;
 import edu.stanford.nlp.trees.Tree;
@@ -31,7 +30,7 @@ public class StanfordDependencyParser implements DependencyParser {
 	private static StanfordDependencyParser instance = null;
 	private LexicalizedParser parser;
 	private static Logger logger = LoggerFactory.getLogger(StanfordDependencyParser.class);
-    private TokenizerFactory<Word> tokenizerFactory = PTBTokenizer.factory(false, new WordTokenFactory());
+	private TokenizerFactory<Word> tokenizerFactory = PTBTokenizer.factory();
 
 	public static StanfordDependencyParser getInstance() {
 		if (instance == null) {

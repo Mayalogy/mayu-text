@@ -33,6 +33,6 @@ public class POSTagger {
 	}
 
 	private POSTagger() throws IOException, ClassNotFoundException {
-		maxEntTagger = new MaxentTagger("edu/stanford/nlp/models/pos-tagger/wsj-left3words/wsj-0-18-left3words-distsim.tagger");
+		maxEntTagger = new MaxentTagger("edu/stanford/nlp/models/pos-tagger/english-left3words/english-left3words-distsim.tagger");		
 	}
 }

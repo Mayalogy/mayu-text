@@ -17,7 +17,7 @@ import com.mayalogy.mayu.io.JarReader;
 import com.mayalogy.mayu.misc.CollectionUtil;
 import com.mayalogy.mayu.text.dtrees.DependencyParser;
 
-import edu.stanford.nlp.ling.CyclicCoreLabel;
+import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.trees.EnglishGrammaticalRelations;
 import edu.stanford.nlp.trees.GrammaticalRelation;
 import edu.stanford.nlp.trees.TreeGraphNode;
@@ -80,13 +80,13 @@ public class MaltDependencyParser implements DependencyParser {
 		}
 		return typedDependencies;
 	}
-
+	
 	private static TreeGraphNode generateTreeGraphNode(String name, int index) {
 		TreeGraphNode tgn = new TreeGraphNode();
-		CyclicCoreLabel ccl = new CyclicCoreLabel();
+		CoreLabel ccl = new CoreLabel();
+		ccl.setValue(SentencePhraseSubstitutor.restoreSubstitute(name));
 		ccl.setIndex(index);
 		tgn.setLabel(ccl);
-		tgn.setValue(SentencePhraseSubstitutor.restoreSubstitute(name));
 		return tgn;
 	}
 

@@ -24,11 +24,11 @@ public class TestRelationGenerator extends TestCase {
 		assertMinNumRels("Lemon is eaten by Yoyo.", 2, false);
 		assertMinNumRels("I do not eat lemon.", 2, true);
 		assertMinNumRels("I eat lemon.", 1, false);
-		assertMinNumRels("I do not eat lemon, cake and cookies.", 3, true);
+		assertMinNumRels("I do not eat lemon, cake or cookies.", 4, true);
 		assertMinNumRels("I eat lemon, cake and cookies.", 3, false);
 		assertMinNumRels("Hariom, Ramesh and Yoyo do not eat lemon.", 3, true);
 		assertMinNumRels("Hariom, Ramesh and Yoyo eat lemon.", 3, false);
-		assertMinNumRels("Hariom, Ramesh and Yoyo do not eat lemon, cake or cookies.", 9, true);
+		assertMinNumRels("Hariom and Ramesh are not morons or idiots.", 4, true);
 		assertMinNumRels("Hariom, Ramesh and Yoyo eat lemon, cake and cookies.", 9, false);
 	}
 
