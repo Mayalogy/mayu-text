@@ -13,14 +13,14 @@ public class TestSimpleTagger extends TestCase {
     public void testTag() {
         
         Ontology.getInstance().addEntitiesFromFile(new String[]{
-                "ot-4.onto"
+                "/data/ontology/ot-4.onto"
         });
         BasicTagger.getInstance().setOntology(Ontology.getInstance());
                 
         assertContains(BasicTagger.getInstance().tag("i'm feeling lovely today"), "i'm feeling");
         
         Ontology.getInstance().addEntitiesFromFile(new String[]{
-                "ot-1.onto"
+                "/data/ontology/ot-1.onto"
         });
         
         assertContains(BasicTagger.getInstance().tag("i do feel great in the summer."), "i do feel great");

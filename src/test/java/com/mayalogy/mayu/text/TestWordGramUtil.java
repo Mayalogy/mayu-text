@@ -16,7 +16,7 @@ public class TestWordGramUtil extends TestCase {
 	
 	public void testGetWordsFromString() {
 		Ontology.getInstance().addEntitiesFromFile(new String[]{
-                "ot-4.onto"
+                "/data/ontology/ot-4.onto"
         });
 		BasicTagger.getInstance().setOntology(Ontology.getInstance());
 		TaggedText t = new TaggedText("I'm feeling Big pigs, small cows, and green dogs are good animals!");

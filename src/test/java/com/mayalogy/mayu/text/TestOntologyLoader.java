@@ -16,7 +16,7 @@ public class TestOntologyLoader extends TestCase {
     private static Logger logger = LoggerFactory.getLogger(TestOntologyLoader.class);
  
     public void testSubstitutionsProb() throws IOException {
-        String[] files = new String[]{"ot-6.onto"};
+        String[] files = new String[]{"/data/ontology/ot-6.onto"};
         List<FoundEntity> tes = OntologyFileLoader.load(files, true);
         boolean hasSug = false;
         for(FoundEntity fE:tes) {
@@ -28,7 +28,7 @@ public class TestOntologyLoader extends TestCase {
     }
     
     public void testLoadOt1() throws IOException {
-        String[] files = new String[]{"ot-1.onto"};
+        String[] files = new String[]{"/data/ontology/ot-1.onto"};
         List<FoundEntity> tes = OntologyFileLoader.load(files, true); 
         
         for(FoundEntity te:tes) {
@@ -47,7 +47,7 @@ public class TestOntologyLoader extends TestCase {
     }
     
     public void testLoadWithSyns() throws IOException {
-        String[] files = new String[]{"ot-10.onto"};
+        String[] files = new String[]{"/data/ontology/ot-10.onto"};
         List<FoundEntity> tes = OntologyFileLoader.load(files, true); 
         
         for(FoundEntity te:tes) {
@@ -56,7 +56,7 @@ public class TestOntologyLoader extends TestCase {
     }
     
     public void testLoadWithTypeReplacements() throws IOException {
-        String[] files = new String[]{"ot-2.onto"};
+        String[] files = new String[]{"/data/ontology/ot-2.onto"};
         List<FoundEntity> tes = OntologyFileLoader.load(files, true); 
         
         for(FoundEntity fe:tes) {

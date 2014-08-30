@@ -10,9 +10,9 @@ import org.slf4j.LoggerFactory;
 import com.mayalogy.mayu.text.Ontology;
 import com.mayalogy.mayu.text.FoundEntity;
 
-public class TestCustomOntology extends TestCase {
+public class TestCoreOntology extends TestCase {
 		
-    private static Logger logger = LoggerFactory.getLogger(TestCustomOntology.class);
+    private static Logger logger = LoggerFactory.getLogger(TestCoreOntology.class);
     
     public void testGetAvailableOntos() throws IOException {
     	for(String s:Ontology.getInstance().getOntologyFiles("data/ontology")) {
@@ -23,7 +23,7 @@ public class TestCustomOntology extends TestCase {
     
     public void testSingleTypeVariant() {
         Ontology.getInstance().addEntitiesFromFile(new String[]{
-                "ot-9.onto"
+                "/data/ontology/ot-9.onto"
         });
         logger.info(Ontology.getInstance().search("formula 1").toReadableString());
     }
@@ -31,7 +31,7 @@ public class TestCustomOntology extends TestCase {
     public void testStemSearches() {
         Ontology.getInstance().clearEntities();
         Ontology.getInstance().addEntitiesFromFile(new String[]{
-                "ot-3.onto"
+                "/data/ontology/ot-3.onto"
         });
         FoundEntity te = Ontology.getInstance().search("viable difference");
         assertNotNull(te);
@@ -39,7 +39,7 @@ public class TestCustomOntology extends TestCase {
         Ontology.getInstance().clearEntities();
         Ontology.getInstance().setStemWordsOnSearch(false);
         Ontology.getInstance().addEntitiesFromFile(new String[]{
-                "ot-3.onto"
+                "/data/ontology/ot-3.onto"
         });
         te = Ontology.getInstance().search("viable difference");
         assertTrue(te==null);
@@ -49,7 +49,7 @@ public class TestCustomOntology extends TestCase {
     public void testCaseInsensitivity() {
         Ontology.getInstance().clearEntities();
         Ontology.getInstance().addEntitiesFromFile(new String[]{
-                "ot-5.onto"
+                "/data/ontology/ot-5.onto"
         });
         FoundEntity te = Ontology.getInstance().search("CAPITAL_LETTERS");
         assertNotNull(te);
@@ -60,7 +60,7 @@ public class TestCustomOntology extends TestCase {
     
     public void testAddOntologies() {
         Ontology.getInstance().addEntitiesFromFile(new String[]{
-                "ot-1.onto"
+                "/data/ontology/ot-1.onto"
         });
         for(FoundEntity te:Ontology.getInstance().getAllEntities()) {
             logger.info(te.toReadableString());

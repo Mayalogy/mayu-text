@@ -63,7 +63,7 @@ public class TestFoundEntity extends TestCase {
 
 	public void testHasUnblacklistedPathFragment() {
         Ontology.getInstance().addEntitiesFromFile(new String[]{
-                "ot-8.onto"
+                "/data/ontology/ot-8.onto"
         });	
         FoundEntity te = Ontology.getInstance().search("dog");
         FoundEntity te2 = new FoundEntity("banana");
@@ -81,7 +81,7 @@ public class TestFoundEntity extends TestCase {
 		
 	public void testIsBlacklistedForType() {
         Ontology.getInstance().addEntitiesFromFile(new String[]{
-                "ot-8.onto"
+                "/data/ontology/ot-8.onto"
         });	
         FoundEntity te = Ontology.getInstance().search("dog");
         assertTrue(te.hasType("clouds"));

@@ -133,7 +133,7 @@ public class OntologyFileLoader {
 	}
 
 	private static void load(String fileName, Map<String, FoundEntity> localEntityMap, boolean stemLookups) throws IOException {
-		final String filePath = "/data/ontology/"+fileName;
+		final String filePath = fileName;
 		logger.info("Loading ontology file: " + filePath);
 
 		final BufferedReader inputStream = JarReader.getResourceAsReader(filePath);
