@@ -14,6 +14,19 @@ public class TestStemmer extends TestCase {
 		// TODO Auto-generated constructor stub
 	}
 
+	public void testOneWord() throws Exception {
+		System.out.println(CachingStemmer.getInstance().stem("pig's"));
+		assertTrue(CachingStemmer.getInstance().stem("pig's").equalsIgnoreCase("pig"));
+	}
+	
+	public void testFirstWordInPhraseStem() throws Exception {
+		System.out.println(CachingStemmer.getInstance().stem("pig's den"));
+		assertTrue(CachingStemmer.getInstance().stem("pig's den").equalsIgnoreCase("pig den"));
+		
+		System.out.println(CachingStemmer.getInstance().stem("pig's dog's den"));
+		assertTrue(CachingStemmer.getInstance().stem("pig's dog's den").equalsIgnoreCase("pig dog's den"));
+	}
+
 	public void testOneLiner() throws Exception {
 		System.out.println(CachingStemmer.getInstance().stem("'m"));
 	}
@@ -28,5 +41,4 @@ public class TestStemmer extends TestCase {
 
 		assertTrue(CachingStemmer.getInstance().stem("Pig farms on the lake's").equalsIgnoreCase("Pig farms on the lake"));
 	}
-
 }

@@ -53,6 +53,9 @@ public class CachingStemmer {
                     for(int i=0; i<parts.length-1; i++) {
                         if(i>0)
                             prefix.append(" ");
+                        if(i==0) //handle case like pig's den
+                        	parts[i]=stem(parts[i]);
+                        
                         prefix.append(parts[i]);
                     }
                     modifiedWord=parts[parts.length-1];
