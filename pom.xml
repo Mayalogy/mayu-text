@@ -21,13 +21,13 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.8.2</version>
+            <version>4.12</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>edu.stanford.nlp</groupId>
             <artifactId>stanford-corenlp</artifactId>
-            <version>3.3.1</version>
+            <version>3.4.1</version>
             <classifier>models</classifier>
         </dependency>
         <dependency>
@@ -38,12 +38,12 @@
         <dependency>
             <groupId>edu.stanford.nlp</groupId>
             <artifactId>stanford-corenlp</artifactId>
-            <version>3.3.1</version>
+            <version>3.4.1</version>
         </dependency>
         <dependency>
             <groupId>org.maltparser</groupId>
             <artifactId>maltparser</artifactId>
-            <version>1.7.2</version>
+            <version>1.9.0</version>
         </dependency>
         
         <!-- TODO REPLACE THESE W/ A PUBLIC REPOSITORY POINTER -->
