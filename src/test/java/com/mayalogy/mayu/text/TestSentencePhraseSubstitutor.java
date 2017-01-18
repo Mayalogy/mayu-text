@@ -22,6 +22,8 @@ public class TestSentencePhraseSubstitutor extends TestCase {
 	
 	public void testSubstitute() {
 		prepOnto();
+		assertMod("Happily eat purple grapes", "Eat purple grapes");
+		assertMod("I happily eat purple grapes", "I eat purple grapes");
 		assertMod("I happily eat grapes", "I eat grapes");
 		assertMod("I take labradors.", null);
 		assertMod("\"I eat purple worms on Wednesdays\"", "I eat " + SentencePhraseSubstitutor.SUBSTITUTION_PREFIX+"purple" 
@@ -36,15 +38,15 @@ public class TestSentencePhraseSubstitutor extends TestCase {
 	
 	public void testRestoreSubstituteWordByWord() {
 		String sp = SentencePhraseSubstitutor.generateSubstitute("Jimbo")+" eats "+SentencePhraseSubstitutor.generateSubstitute("grapes");
-		System.out.println(sp);
 		String p = SentencePhraseSubstitutor.restoreSubstituteWordByWord(sp);
-		System.out.println(p);
 		assertTrue(p.equalsIgnoreCase("Jimbo eats grapes"));
 	}
 	
 	private void assertMod(String original, String match) {
 		String[] substitutionTypeWhitelist = { "popsicles" };
+		System.out.println(original);
 		String mod = SentencePhraseSubstitutor.substitute(original, Ontology.getInstance(), substitutionTypeWhitelist);
+		System.out.println(mod+"\n");
 		if(match!=null)
 			assertTrue(mod.trim().equalsIgnoreCase(match.trim()));
 	}

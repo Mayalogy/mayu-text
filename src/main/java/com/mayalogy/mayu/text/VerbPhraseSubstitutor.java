@@ -36,9 +36,9 @@ public class VerbPhraseSubstitutor {
     }
     
     public String substitute(String sentence) {
-        for(String complexVerb:complexToSimpleVerbMap.keySet()) {
-            if(sentence.toLowerCase().indexOf(complexVerb+" ")!=-1) { //Note: the whitespace at the end is to ensure only full word substitutions, i.e. 'significantly improve' will not end up 'significantly improvesd'
-                sentence = sentence.replaceAll(complexVerb, complexToSimpleVerbMap.get(complexVerb));
+        for(String complexVerb:complexToSimpleVerbMap.keySet()) {        	
+        	if(sentence.toLowerCase().indexOf(complexVerb+" ")!=-1) { //Note: the whitespace at the end is to ensure only full word substitutions, i.e. 'significantly improve' will not end up 'significantly improvesd'
+        		sentence = sentence.replaceAll("(?i)"+complexVerb, complexToSimpleVerbMap.get(complexVerb));
                 break; //low chance of more than 1 verb subtitution, so we bail for speed.
             }
         }
@@ -54,7 +54,7 @@ public class VerbPhraseSubstitutor {
         while ((line = inputStream.readLine()) != null) {
             if (line.trim().length() > 0 && !line.startsWith("#")) {
                 String[] parts = line.trim().split("\\|");
-                complexToSimpleVerbMap.put(parts[0].trim(), parts[1].trim()); //TODO Make onto case sensitive lookups
+                complexToSimpleVerbMap.put(parts[0].trim().toLowerCase(), parts[1].trim().toLowerCase()); //TODO Make onto case sensitive lookups
             }
         }
         inputStream.close();
