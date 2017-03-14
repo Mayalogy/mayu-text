@@ -48,20 +48,15 @@
         
         <!-- TODO REPLACE THESE W/ A PUBLIC REPOSITORY POINTER -->
         <dependency>
-             <groupId>wordnet-rita</groupId>
+             <groupId>com.xyonix.external</groupId>
              <artifactId>wordnet-rita</artifactId>
-             <scope>system</scope>
              <version>0.0.1</version>
-             <systemPath>${project.basedir}/external/lib/ritaWN.jar</systemPath>
         </dependency>
         <dependency>
-             <groupId>wordnet-rita-support</groupId>
+             <groupId>com.xyonix.external</groupId>
              <artifactId>wordnet-rita-support</artifactId>
-             <scope>system</scope>
              <version>0.0.1</version>
-             <systemPath>${project.basedir}/external/lib/supportWN.jar</systemPath>
         </dependency>
-        
         <dependency>
             <groupId>com.mayalogy.mayu</groupId>
             <artifactId>mayu-wordnet</artifactId>
