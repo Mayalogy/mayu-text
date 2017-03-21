@@ -12,17 +12,17 @@ public class BasicTagger {
 
 	public static BasicTagger getInstance() {
 		if(instance==null) {
-			instance = new BasicTagger();
+			instance = new BasicTagger(Ontology.getInstance());
 		}
 		return instance;
 	}
 
-	private BasicTagger() {
+	protected BasicTagger(Ontology o) {
 		
 		/**
 		 * Set default Ontology.
 		 */
-		setOntology(Ontology.getInstance());
+		setOntology(o);
 	}
 	
 	public void setOntology(CoreOntology coreOntology) {

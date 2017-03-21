@@ -57,7 +57,7 @@ public class Ontology extends CoreOntology {
     	}
     }
 
-    private Ontology() { }
+    protected Ontology() { }
 
     /**
      * Searches for entity names in ontology. If an exact match exists, it is returned. If stemming is specified, 
